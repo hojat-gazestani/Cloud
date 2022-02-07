@@ -6,7 +6,8 @@ AWS Certified Solutions Architect  Associate -  Notes
 Availibity zone Regon
 session2 part1
 
-## What is a vpc?
+## VPC
+### What is a vpc?
 * VPC : Virtual Private Cloud - Isolated cloud resource Atuoscaling Load balancing
 
 EC2 : Elastic computing cloud
