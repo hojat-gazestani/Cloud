@@ -1,7 +1,7 @@
 AWS Certified Solutions Architect  Associate -  Notes
 ======================================================
 - [VPC](#vpc)
-	- [What is a vpc?](#What-is-a-vpc)
+	- [What is a vpc?]
 
 Availibity zone Regon
 session2 part1
