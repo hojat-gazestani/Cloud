@@ -26,6 +26,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [Google Cloud SQL and Google Cloud Spanner](#Google-Cloud-SQL-and-Google-Cloud-Spanner)
   - [Cloud Spanner](#Cloud-Spanner)
   - [Comparing Storage Options](#Comparing-Storage-Options)
+  - [Course Labs](#Course-Labs)
 
 
 
@@ -388,5 +389,134 @@ Ways to getting data into your cloud:
 * Cloud Datastore actually stores structured objects.
 * Technical detail 2
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/5-%20Cloud%20storage/10-compare2.png)
+
+### Course Labs
+Username
+student-01-fe65b9bb4ec0@qwiklabs.net
+
+Password
+XDWHI9H6EvRs
+
+${GCP Project ID}
+qwiklabs-gcp-03-ca3c8283cc51
+
+${Region}
+us-central1
+
+${Zone}
+us-central1-a
+------------------------------------------------------
+
+### Deploy a web server VM instance
+```commandline
+Compute Engine > VM instances.
+Create Instance.
+Create an Instance Name: 	bloghost
+Region and Zone:            ${Zone}
+Machine type: 				default
+Boot disk:  				Debian GNU/Linux 9 (stretch).
+Identity and API access : 	defaults
+Firewall: 					Allow HTTP traffic.
+
+Networking, disks, security, management, sole tenancy -> Management
+Startup script: 
+apt-get update
+apt-get install apache2 php php-mysql -y
+service apache2 restart
+
+Create.
+ 
+Copy: bloghost VM instance's internal and external IP
+```
+### Create a Cloud Storage bucket using the gsutil command line
+```commandline
+Google Cloud Platform -> Activate Cloud Shell ->  Continue.
+gcloud config set project qwiklabs-gcp-03-ca3c8283cc51
+export LOCATION=ASIA
+gsutil mb -l $LOCATION gs://$DEVSHELL_PROJECT_ID
+gsutil cp gs://cloud-training/gcpfci/my-excellent-blog.png my-excellent-blog.png
+gsutil cp my-excellent-blog.png gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png
+gsutil acl ch -u allUsers:R gs://$DEVSHELL_PROJECT_ID/my-excellent-blog.png
+```
+
+### Create the Cloud SQL instance
+````commandline
+Navigation menu -> SQL -> Create instance.
+Choose a database engine: 			MySQL.
+Instance ID,						blog-db
+Root password						simplesimple
+Single zone							region and zone assigned by Qwiklabs.
+
+Create Instance.
+
+click on blog-db
+Copy  Public IP address 
+Users -> ADD USER ACCOUNT
+User name : blogdbuser
+Password	: simplesimple
+ADD
+
+Connections -> Add network.
+choose Public IP
+Name: web front end
+Network: external IP address of your bloghost /32 , 35.192.208.2/32
+Done 
+Save 
+````
+
+### Configure an application in a Compute Engine instance to use Cloud SQL
+```commandline
+ Navigation menu -> Compute Engine > VM instances.
+ SSH: bloghost.
+ cd /var/www/html
+ sudo vim index.php
+ <html>
+<head><title>Welcome to my excellent blog</title></head>
+<body>
+<h1>Welcome to my excellent blog</h1>
+<?php
+ $dbserver = "CLOUDSQLIP";
+$dbuser = "blogdbuser";
+$dbpassword = "DBPASSWORD";
+// In a production blog, we would not store the MySQL
+// password in the document root. Instead, we would store it in a
+// configuration file elsewhere on the web server VM instance.
+$conn = new mysqli($dbserver, $dbuser, $dbpassword);
+if (mysqli_connect_error()) {
+        echo ("Database connection failed: " . mysqli_connect_error());
+} else {
+        echo ("Database connection succeeded.");
+}
+?>
+</body></html>
+
+sudo service apache2 restart
+
+35.192.208.2/index.php
+Database connection failed: ...
+
+sudo vim index.php
+replace CLOUDSQLIP: Cloud SQL instance Public IP
+DBPASSWORD with the Cloud SQL database password
+
+sudo service apache2 restart
+
+Database connection succeeded.
+```
+
+### Configure an application in a Compute Engine instance to use a Cloud Storage object
+```commandline
+Cloud Storage > Browser.
+bucket that is named after your GCP project.
+my-excellent-blog.png opy the URL behind
+Public access
+ 
+ Return to your ssh session on your bloghost
+cd /var/www/html
+sudo vim index.php
+<img src='https://storage.googleapis.com/qwiklabs-gcp-0005e186fa559a09/my-excellent-blog.png'>
+
+sudo service apache2 restart
+```
 
 
