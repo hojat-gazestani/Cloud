@@ -2,7 +2,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 =====================================================
 - [intro](#intro)
   - [GCP services](#GCP-services)
-  - [cloud computing:](#cloud-computing:)
+  - [cloud computing](#cloud-computing)
   - [PaaS](#PaaS)
 
 
@@ -37,7 +37,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   * Speech API 
   * Translate API 
 
-### cloud computing: 
+### cloud computing
 - Customers can scale their resource use up and down 
 - Computing resources available on-demand and self-service 
 - Customers pay only for what they use or reserve 
