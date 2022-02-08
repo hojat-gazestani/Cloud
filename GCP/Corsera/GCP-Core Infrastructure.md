@@ -48,7 +48,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 ### Choose a fundamental characteristic of devices in a virtualized data center. 
 - They are manageable separately from the underlying hardware. 
 
-### Paas
+### PaaS
 * Platform as a Service 
 * let you bind your application code to libraries that give access to the infrastructure your application needs 
 
