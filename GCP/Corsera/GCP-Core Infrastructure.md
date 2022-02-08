@@ -175,7 +175,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   * Instances (VMs)
   * Persistent Disks
 
-![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/4-disks-images.png)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/4-disks-images.png)
 
 ### Virtual Private Cloud (VPC) 
 * global private isolated virtual network partition that provides managed networking functionality for your GCP resources. 
@@ -184,7 +184,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 
 * The instances within the VPC have internal IP addresses and can communicate privately with each other across the globe. 
 
-![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/5-routing-vpc.png)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/5-routing-vpc.png)
 
 ### GCP Projects 
 * an organizational construct used for billing and permissions. 
@@ -195,7 +195,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 * it’s simply a way to organize resources from a billing and permissions perspective, and each project has its own VPC network(s) isolated from other projects in GCP. 
 
 
-![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/12-projects.png)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/12-projects.png)
 
 * VPC Networks and Subnets
   * VPC network is like VRF 
@@ -209,7 +209,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
     * Firewall
     * Internal DNS
 
-![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/6-gcp-networks.png)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/6-gcp-networks.png)
 
 * VPC network called default is global, while each of the subnets within it is regional. 
 
@@ -217,11 +217,11 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 
 * Of course, you can isolate these subnets within the network if you wish using firewall policies. 
  
-![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/7-gcp-subnet-zones.png)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/7-gcp-subnet-zones.png)
 
 * If you want complete isolation between various applications, customers, etc., you could create multiple networks.
 
-![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/8-multiple-networks.png)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/8-multiple-networks.png)
 
 * You can have up to five networks per project, including the default network. Multiple networks within a single project can provide multi-tenancy, IP overlap, or isolation within the project itself. Just another option instead of having multiple projects. 
 
@@ -231,7 +231,7 @@ Each VM instance in GCP will have an internal IP address and typically an extern
 ### Routes
 * All networks have routes in order to communicate with each other
 
-![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/9-gcp-routes.png)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/9-gcp-routes.png)
 
 * Routes are considered a “network resource” and cannot be shared between projects or networks. 
 
@@ -239,7 +239,7 @@ Each VM instance in GCP will have an internal IP address and typically an extern
 
 * Even though there are no “routers” in the software-defined network, you can still think of each VM instance as connected to some core router, with all traffic passing through it based on the perspective of each node’s individual route table.
 
-![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/10-gcp-route-tables.png)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/10-gcp-route-tables.png)
 
 ### Firewalls 
 
@@ -247,7 +247,7 @@ Each VM instance in GCP will have an internal IP address and typically an extern
 
 * If you have a concept in your mind that all this traffic is flowing through some single firewall chokepoint device somewhere, you’re mistaken. GCP is a full SDN, with firewall policies applied at the instance-level, no matter where it resides. These checks are performed immediately without having to funnel traffic through dedicated security appliances.
 
-![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/11-gcp-firewalls.png)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/11-gcp-firewalls.png)
 
 * Firewall rules can match IP addresses or ranges, but can also match tags.  Tags are user-defined strings that help organize firewall policies for standards-based policy approach. For example, you could have a tag called web-server, and have a firewall policy that says any VM with the tag web-server should have ports HTTP, HTTPS, and SSH opened. 
 
@@ -307,4 +307,4 @@ Each VM instance in GCP will have an internal IP address and typically an extern
 
 Ways to getting data into your cloud: 
 
-![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/5-%20Cloud%20storage/0-cloud-storage.png)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/5-%20Cloud%20storage/0-cloud-storage.png)
