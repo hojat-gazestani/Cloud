@@ -6,6 +6,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [fundamental characteristic of devices](#fundamental-characteristic-of-devices )
   - [PaaS](#PaaS)
   - [IaaS](#IaaS)
+  - [qus](#qus)
 
 
 
@@ -59,17 +60,17 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 * Infrastructure as a Service
 * provides raw compute, storage, and network, organized in ways that are familiar from physical data centers 
 
-### qus1
+### qus
 * What kind of customer benefits most from billing by the second for cloud resources such as virtual machines?
   * Customers who create and run many virtual machines 
 
-### qus2
-* Services and APIs are enabled on a per project basis.
+* qus2
+  * Services and APIs are enabled on a per project basis.
 
-### qus3
-* Choose a fundamental characteristic of devices in a virtualized data center.
-  * They are manageable separately from the underlying hardware. 
-  * They use less resources than devices in a physical data center. 
-  * They are more secure. 
-  * They are available from anywhere on the Internet.
+* qus3
+  * Choose a fundamental characteristic of devices in a virtualized data center.
+    * They are manageable separately from the underlying hardware. 
+    * They use less resources than devices in a physical data center. 
+    * They are more secure. 
+    * They are available from anywhere on the Internet.
 
