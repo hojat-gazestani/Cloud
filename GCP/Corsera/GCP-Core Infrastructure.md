@@ -22,6 +22,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [Network Billing](#Network-Billing)
 - [Google Compute engine and networking](#Google-Compute-engine-and-networking )
 - [Cloud storage integration](#Cloud-storage-integration)
+  - [Google Cloud Bigtable](#Google-Cloud-Bigtable)
 
 
 
@@ -308,3 +309,28 @@ Each VM instance in GCP will have an internal IP address and typically an extern
 Ways to getting data into your cloud: 
 
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/5-%20Cloud%20storage/0-cloud-storage.png)
+
+### Google Cloud Bigtable
+* Is a big data database service
+
+* relational database schema:
+  * tables in which every row has the same set of columns,
+  * and the database engine enforces that rule and other rules you specify for each table
+  * 
+* NoSQL
+  * not all the rows might need to have the same columns
+  * the database might be designed to take advantage of that by sparsely populating the rows.
+  * Which brings us to Bigtable
+  * It's ideal for data that has a single lookup key
+  * persistent hash table.
+  * Cloud Bigtable is ideal for storing large amounts of data with very low latency.
+  * It supports high throughput, both read and write, so it's a great for operational, analytical(IoT,user analytics and financial data analysis.)
+* Bigtable
+  * scalability
+  * administration tasks like upgrades and restarts transparently
+  * encrypted data in both in-flight and at rest.
+  * major application including  search, analytics, maps and Gmail
+
+* Can interact with other GCP services
+
+![alt text](# 7)
