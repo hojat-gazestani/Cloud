@@ -24,6 +24,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 - [Cloud storage integration](#Cloud-storage-integration)
   - [Google Cloud Bigtable](#Google-Cloud-Bigtable)
   - [Google Cloud SQL and Google Cloud Spanner](#Google-Cloud-SQL-and-Google-Cloud-Spanner)
+  - [Cloud Spanner](#Cloud-Spanner)
 
 
 
@@ -351,7 +352,7 @@ Ways to getting data into your cloud:
   * data is encrypted(google security)
 
   * CloudSQL connections
-  ![alt text](8)
+  ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/5-%20Cloud%20storage/8-cloudSQl-connections.png)
 
 * horizontal scaleability, consider using Cloud Spanner. It offers transactional consistency at a global scale, schemas, SQL, and automatic synchronous replication for high availability.
   * outgrown any relational database,
@@ -359,3 +360,25 @@ Ways to getting data into your cloud:
   * transactional consistency
   * global data and strong consistency,
   * financial applications, and inventory applications.
+
+* Questions
+  * Which database service can scale to higher database sizes? Cloud Spanner.
+  * Which database service presents a MySQL or PostgreSQL interface to clients? Cloud SQL.
+  * Which database service offers transactional consistency at global scale? Cloud Spanner.
+
+### Google Cloud Datastore
+* Is a horizontally scalable NoSQL DB
+* Designed for application backend
+* store structured data from App Engine apps
+* automatically handles sharding and replication
+* Unlike Cloud Bigtable, it also offers transactions that affect multiple database rows, and it lets you do SQL-like queries. 
+* free daily quota that provides storage, reads, writes, deletes and small operations at no charge
+
+* Questions
+  * How are Cloud Datastore and Cloud Bigtable alike
+    * They are both highly scalable
+
+They both have a free daily quota.
+They are both NoSQL databases.
+
+* Cloud Datastore databases CAN span App Engine and Compute Engine applications. 
