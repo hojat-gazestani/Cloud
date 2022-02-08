@@ -49,8 +49,9 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 - They are manageable separately from the underlying hardware. 
 
 ### Paas
-### Platform as a Service 
-- let you bind your application code to libraries that give access to the infrastructure your application needs 
+* Platform as a Service 
+  * let you bind your application code to libraries that give access to the infrastructure your application needs 
+
 
 ### Infrastructure as a Service
 - provides raw compute, storage, and network, organized in ways that are familiar from physical data centers 
