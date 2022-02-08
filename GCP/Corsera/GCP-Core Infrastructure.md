@@ -14,6 +14,14 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [resources](#resources)
   - [Regions and Zones](#Regions-and-Zones)
   - [Virtual Private Cloud (VPC)](#Virtual-Private-Cloud-(VPC))
+  - [GCP Projects ](#GCP-Projects)
+  - [IP Addresses](#IP-Addresses)
+  - [Routes](#Routes)
+  - [Firewalls ](#Firewalls)
+  - [DNS Resolution](#DNS-Resolution)
+  - [Network Billing](#Network-Billing)
+- [Google Compute engine and networking](#Google-Compute-engine-and-networking )
+- [Cloud storage integration](#Cloud-storage-integration)
 
 
 
@@ -177,4 +185,125 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 * The instances within the VPC have internal IP addresses and can communicate privately with each other across the globe. 
 
 ![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/5-routing-vpc.png)
+
+### GCP Projects 
+* an organizational construct used for billing and permissions. 
+* Used for apps or various environments like Prod/Test/Dev. 
+* Finance/HR/Marketing. 
+* some use it to provide billing to customers based on their usage within a cloud-hosted environment. 
+
+* it’s simply a way to organize resources from a billing and permissions perspective, and each project has its own VPC network(s) isolated from other projects in GCP. 
+
+
+![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/12-projects.png)
+
+* VPC Networks and Subnets
+  * VPC network is like VRF 
+
+ 
+
+* GCP Project
+  *VPC Network
+    * Subnets 
+    * Routes
+    * Firewall
+    * Internal DNS
+
+![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/6-gcp-networks.png)
+
+* VPC network called default is global, while each of the subnets within it is regional. 
+
+* Even though subnets are regional, instances can communicate with other instances in the same VPC network using their private IP addresses. 
+
+* Of course, you can isolate these subnets within the network if you wish using firewall policies. 
+ 
+![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/7-gcp-subnet-zones.png)
+
+* If you want complete isolation between various applications, customers, etc., you could create multiple networks.
+
+![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/8-multiple-networks.png)
+
+* You can have up to five networks per project, including the default network. Multiple networks within a single project can provide multi-tenancy, IP overlap, or isolation within the project itself. Just another option instead of having multiple projects. 
+
+### IP Addresses
+Each VM instance in GCP will have an internal IP address and typically an external IP address.  The internal IP address is used to communicate between instances in the same VPC network, while the external IP address is used to communicate with instances in other networks or the Internet. These IP addresses are ephemeral by default but can be statically assigned. 
+
+### Routes
+* All networks have routes in order to communicate with each other
+
+![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/9-gcp-routes.png)
+
+* Routes are considered a “network resource” and cannot be shared between projects or networks. 
+
+* If an instance tag is used, the route applies to that instance, and if an instance tag is not used, then the route applies to all instances in that network. 
+
+* Even though there are no “routers” in the software-defined network, you can still think of each VM instance as connected to some core router, with all traffic passing through it based on the perspective of each node’s individual route table.
+
+![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/10-gcp-route-tables.png)
+
+### Firewalls 
+
+* Each VPC network has its own distributed firewall, 
+
+* If you have a concept in your mind that all this traffic is flowing through some single firewall chokepoint device somewhere, you’re mistaken. GCP is a full SDN, with firewall policies applied at the instance-level, no matter where it resides. These checks are performed immediately without having to funnel traffic through dedicated security appliances.
+
+![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/11-gcp-firewalls.png)
+
+* Firewall rules can match IP addresses or ranges, but can also match tags.  Tags are user-defined strings that help organize firewall policies for standards-based policy approach. For example, you could have a tag called web-server, and have a firewall policy that says any VM with the tag web-server should have ports HTTP, HTTPS, and SSH opened. 
+
+* Firewall rules are at the network resource level and are not shared between projects are other networks. 
+
+### DNS Resolution 
+
+* DNS entries are automatically created resolving to a formatted hostname. 
+
+* FQDN = <pre>[hostname].c.[project-id].internal</pre> 
+
+* So, if I had an instance named “porcupine” in my project called “tree”, my DNS FQDN would be: 
+
+* porcupine.c.tree.internal 
+
+* Resolution of this name is handled by an internal metadata server that acts as a DNS resolver (169.254.169.254), provided as a part of Google Compute Engine (GCE). This resolver will answer both internal queries and external DNS queries using Google’s public DNS servers. 
+
+* If an instance or service needs to be accessed publicly by FQDN, a public-facing DNS record will need to exist pointing to the external IP address of the instance or service. This can be done by publishing public DNS records. You have the option of using some external DNS service outside of GCP or using Google Cloud DNS. 
+
+### Network Billing 
+
+* GCP bills clients for egress traffic only.  Egress traffic is considered as traffic to the Internet, or from one region to another (in the same network), or between zones within a region. 
+
+* You are not billed for ingress traffic. Ingress traffic includes VM-to-VM traffic in a single zone (same region, network), and traffic to most GCP services. 
+
+* Some notes on caveats/limitations 
+  * VPC networks only support IPv4 unicast traffic (No IPv6, or broadcast/multicast) 
+  * Maximum of 7000 VM instances per VPC network 
+
+## Google Compute engine and networking 
+
+* For which of these interconnect options is a Service Level Agreement available 
+
+* Google Cloud Load Balancing allows you to balance HTTP-based traffic across multiple Compute Engine regions. 
+
+* Networks are global; subnets are regional 
+
+* Local SSD is used for an application running in a Compute Engine virtual machine needs high-performance scratch space.  
+
+* Choose an application that would be suitable for running in a Preemptible VM. 
+
+* A batch job that can be checkpointed and restarted 
+
+* Use big VMs for in-memory databases and CPU-intensive analytics; use many VMs for fault tolerance and elasticity 
+
+* VPC routers and firewalls, They are managed by Google as a built-in feature. 
+
+* A GCP customer wants to load-balance traffic among the back-end VMs that form part of a multi-tier application. Which load-balancing option should this customer choose? 
+
+* The regional internal load balancer 
+
+* For which of these interconnect options is a Service Level Agreement available? 
+
+* Dedicated Interconnect 
+
+## Cloud storage integration  
+
+Ways to getting data into your cloud: 
 
