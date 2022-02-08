@@ -4,7 +4,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 - [#GCP services](#GCP-services)
 
 
-##GCP services
+### GCP services
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/1-%20GCP%20resource%20hairearchy/1-services.png)
 
 * Compute
