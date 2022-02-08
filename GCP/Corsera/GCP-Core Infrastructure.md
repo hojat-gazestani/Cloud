@@ -3,7 +3,9 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 - [intro](#intro)
   - [GCP services](#GCP-services)
   - [cloud computing](#cloud-computing)
+  - [fundamental characteristic of devices](#fundamental-characteristic-of-devices )
   - [PaaS](#PaaS)
+  - [IaaS](#IaaS)
 
 
 
@@ -45,24 +47,29 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 
 - Providers are NOT dedicating physical resources to each customer 
 
-### Choose a fundamental characteristic of devices in a virtualized data center. 
-- They are manageable separately from the underlying hardware. 
+### fundamental characteristic of devices 
+* Choose a fundamental characteristic of devices in a virtualized data center. 
+* They are manageable separately from the underlying hardware. 
 
 ### PaaS
 * Platform as a Service 
 * let you bind your application code to libraries that give access to the infrastructure your application needs 
 
+### IaaS
+* Infrastructure as a Service
+* provides raw compute, storage, and network, organized in ways that are familiar from physical data centers 
 
-### Infrastructure as a Service
-- provides raw compute, storage, and network, organized in ways that are familiar from physical data centers 
+### qus1
+* What kind of customer benefits most from billing by the second for cloud resources such as virtual machines?
+  * Customers who create and run many virtual machines 
 
-### What kind of customer benefits most from billing by the second for cloud resources such as virtual machines?
-- Customers who create and run many virtual machines 
+### qus2
+* Services and APIs are enabled on a per project basis.
 
-### Services and APIs are enabled on a per project basis.
+### qus3
+* Choose a fundamental characteristic of devices in a virtualized data center.
+  * They are manageable separately from the underlying hardware. 
+  * They use less resources than devices in a physical data center. 
+  * They are more secure. 
+  * They are available from anywhere on the Internet.
 
-### Choose a fundamental characteristic of devices in a virtualized data center.
-- They are manageable separately from the underlying hardware. 
-- They use less resources than devices in a physical data center. 
-- They are more secure. 
-- They are available from anywhere on the Internet. 
