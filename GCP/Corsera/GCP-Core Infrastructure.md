@@ -7,6 +7,10 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [PaaS](#PaaS)
   - [IaaS](#IaaS)
   - [qus](#qus)
+- [resource hairarchy](#resource-hairarchy)
+  - [todo](#todo)
+- [Networking Fundamentals](#Networking-Fundamentals)
+  - [compnents](#compnents)
 
 
 
@@ -61,8 +65,9 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 * provides raw compute, storage, and network, organized in ways that are familiar from physical data centers 
 
 ### qus
-* What kind of customer benefits most from billing by the second for cloud resources such as virtual machines?
-  * Customers who create and run many virtual machines 
+* qus1
+  * What kind of customer benefits most from billing by the second for cloud resources such as virtual machines?
+    * Customers who create and run many virtual machines 
 
 * qus2
   * Services and APIs are enabled on a per project basis.
@@ -74,3 +79,49 @@ Google Cloud Fundamentals: Core Infrastructure - Note
     * They are more secure. 
     * They are available from anywhere on the Internet.
 
+## resource hairarchy
+### todo
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/1-%20GCP%20resource%20hairearchy/2-%20hierarchy.png)
+
+* When would you choose to have an organization node?
+  * When you want to apply organization-wide policies centrally. 
+  * When you want to create folders 
+
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/1-%20GCP%20resource%20hairearchy/3-%20project%20attributes.png)
+
+* Order these IAM role types from broadest to finest-grained.* 
+  * Primitive roles, predefined roles, custom roles 
+
+* Can NOT IAM policies that are implemented higher in the resource hierarchy take away access that is granted by lower-level policies
+
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/1-%20GCP%20resource%20hairearchy/4-%20folder.png)
+
+
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/1-%20GCP%20resource%20hairearchy/5-iam%20hairarchy.png)
+
+
+* When would you choose to have an organization node?  
+  * 
+  * When you want to apply organization-wide policies centrally. 
+  * When you want to organize resources into projects. 
+
+* Order these IAM role types from broadest to finest-grained. 
+  * Primitive roles, predefined roles, custom roles 
+
+* Can NOT IAM policies that are implemented higher in the resource hierarchy take away access that is granted by lower-level policies 
+
+## Networking Fundamentals
+### compnents
+ 
+* Network components
+  * VPCs 
+  * Projects 
+  * Networks 
+  * Regions 
+  * Zones 
+  * Subnets 
+  * Switching 
+  * Routing 
+  * Firewalls
+  
+* Essentially, we’ll be going over this diagram: 
