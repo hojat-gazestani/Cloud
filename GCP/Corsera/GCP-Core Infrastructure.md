@@ -25,6 +25,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [Google Cloud Bigtable](#Google-Cloud-Bigtable)
   - [Google Cloud SQL and Google Cloud Spanner](#Google-Cloud-SQL-and-Google-Cloud-Spanner)
   - [Cloud Spanner](#Cloud-Spanner)
+  - [Comparing Storage Options](#Comparing-Storage-Options)
 
 
 
@@ -377,8 +378,13 @@ Ways to getting data into your cloud:
 * Questions
   * How are Cloud Datastore and Cloud Bigtable alike
     * They are both highly scalable
-
-They both have a free daily quota.
-They are both NoSQL databases.
+    * They are both NoSQL databases.
 
 * Cloud Datastore databases CAN span App Engine and Compute Engine applications. 
+
+### Comparing Storage Options
+* Technical detail 1
+![alt text]()
+* Cloud Datastore actually stores structured objects.
+* Technical detail 2
+![alt text]()
