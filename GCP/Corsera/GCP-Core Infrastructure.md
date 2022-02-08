@@ -1,7 +1,10 @@
 Google Cloud Fundamentals: Core Infrastructure - Note
 =====================================================
+- [#intro](#intro)
+  - [#GCP services](#GCP-services)
+  - [#cloud computing:](#cloud-computing:)
+  - [#PaaS](#PaaS)
 
-- [#GCP services](#GCP-services)
 
 
 ### GCP services
@@ -45,6 +48,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 ### Choose a fundamental characteristic of devices in a virtualized data center. 
 - They are manageable separately from the underlying hardware. 
 
+### Paas
 ### Platform as a Service 
 - let you bind your application code to libraries that give access to the infrastructure your application needs 
 
