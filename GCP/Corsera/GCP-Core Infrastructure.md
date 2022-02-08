@@ -27,6 +27,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [Cloud Spanner](#Cloud-Spanner)
   - [Comparing Storage Options](#Comparing-Storage-Options)
   - [Course Labs](#Course-Labs)
+  - [questions](#questions)
 
 
 
@@ -505,4 +506,33 @@ sudo vim index.php
 sudo service apache2 restart
 ```
 
+### questions
+*You are developing an application that transcodes large video files. Which storage option is the best choice for your application?
+  * Cloud Storage
+
+* You manufacture devices with sensors and need to stream huge amounts of data from these devices to a storage option
+in the cloud. Which Google Cloud Platform storage option is the best choice for your application? * Cloud Bigtable
+
+* Which statement is true about objects in Cloud Storage?
+  * They are immutable, and new versions overwrite old unless you turn on versioning.
+
+* You are building a small application. If possible, you'd like this application's data storage to be at no additional
+  charge. Which service has a free daily quota, separate from any free trials?
+  * Cloud Datastore
+
+* How do the Nearline and Coldline storage classes differ from Multi-regional and Regional? Choose all that are
+  * Nearline and Coldline assess lower storage fees.
+  * Nearline and Coldline assess additional retrieval fees.
+
+* Your application needs a relational database, and it expects to talk to MySQL. Which storage option is the best choice
+  for your application?
+  * Cloud SQL
+
+* Your application needs to store data with strong transactional consistency, and you want seamless scaling up. Which
+  storage option is the best choice for your application?
+  * Cloud Spanner
+
+* Which GCP storage service is often the ingestion point for data being moved into the cloud, and is frequently the
+  long-term storage location for data?
+  * Cloud Storage
 
