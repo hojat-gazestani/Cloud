@@ -1,9 +1,9 @@
 Google Cloud Fundamentals: Core Infrastructure - Note
 =====================================================
-- [#intro](#intro)
-  - [#GCP services](#GCP-services)
-  - [#cloud computing:](#cloud-computing:)
-  - [#PaaS](#PaaS)
+- [intro](#intro)
+  - [GCP services](#GCP-services)
+  - [cloud computing:](#cloud-computing:)
+  - [PaaS](#PaaS)
 
 
 
