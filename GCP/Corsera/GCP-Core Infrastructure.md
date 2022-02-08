@@ -23,6 +23,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 - [Google Compute engine and networking](#Google-Compute-engine-and-networking )
 - [Cloud storage integration](#Cloud-storage-integration)
   - [Google Cloud Bigtable](#Google-Cloud-Bigtable)
+  - [Google Cloud SQL and Google Cloud Spanner](#Google-Cloud-SQL-and-Google-Cloud-Spanner)
 
 
 
@@ -333,4 +334,28 @@ Ways to getting data into your cloud:
 
 * Can interact with other GCP services
 
-![alt text](# 7)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/5-%20Cloud%20storage/7-access-pattern.png)
+
+### Google Cloud SQL and Google Cloud Spanner
+* CloudSQL
+  * Is managed RDBMS
+  * Offers MySQL and PostgresSQLBeta database as service
+  * use data base schema for data consistent
+  * transactions, changes as all or nothing. Either they all get made, or none do.
+
+* benefits of using the Cloud SQL
+  * Automation replication (read, failover, and external replicas)
+  * backup your data with either on-demand or scheduled backups
+  * vertically by changing the machine type(read and write)
+  * horizontally replicas(read)
+  * data is encrypted(google security)
+
+  * CloudSQL connections
+  ![alt text](8)
+
+* horizontal scaleability, consider using Cloud Spanner. It offers transactional consistency at a global scale, schemas, SQL, and automatic synchronous replication for high availability.
+  * outgrown any relational database,
+  * sharding your databases for throughput high performance
+  * transactional consistency
+  * global data and strong consistency,
+  * financial applications, and inventory applications.
