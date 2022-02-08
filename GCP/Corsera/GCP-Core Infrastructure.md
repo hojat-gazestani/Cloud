@@ -384,7 +384,9 @@ Ways to getting data into your cloud:
 
 ### Comparing Storage Options
 * Technical detail 1
-![alt text]()
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/5-%20Cloud%20storage/9-compare1.png)
 * Cloud Datastore actually stores structured objects.
 * Technical detail 2
-![alt text]()
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/5-%20Cloud%20storage/10-compare2.png)
+
+
