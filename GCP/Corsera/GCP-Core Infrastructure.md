@@ -391,21 +391,7 @@ Ways to getting data into your cloud:
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/5-%20Cloud%20storage/10-compare2.png)
 
 ### Course Labs
-Username
-student-01-fe65b9bb4ec0@qwiklabs.net
-
-Password
-XDWHI9H6EvRs
-
-${GCP Project ID}
-qwiklabs-gcp-03-ca3c8283cc51
-
-${Region}
-us-central1
-
-${Zone}
-us-central1-a
-------------------------------------------------------
+---------------
 
 ### Deploy a web server VM instance
 ```commandline
