@@ -33,3 +33,31 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   * Machine Learning 
   * Speech API 
   * Translate API 
+
+### cloud computing: 
+- Customers can scale their resource use up and down 
+- Computing resources available on-demand and self-service 
+- Customers pay only for what they use or reserve 
+- Resources are available from anywhere over the network 
+
+- Providers are NOT dedicating physical resources to each customer 
+
+### Choose a fundamental characteristic of devices in a virtualized data center. 
+- They are manageable separately from the underlying hardware. 
+
+### Platform as a Service 
+- let you bind your application code to libraries that give access to the infrastructure your application needs 
+
+### Infrastructure as a Service
+- provides raw compute, storage, and network, organized in ways that are familiar from physical data centers 
+
+### What kind of customer benefits most from billing by the second for cloud resources such as virtual machines?
+- Customers who create and run many virtual machines 
+
+### Services and APIs are enabled on a per project basis.
+
+### Choose a fundamental characteristic of devices in a virtualized data center.
+- They are manageable separately from the underlying hardware. 
+- They use less resources than devices in a physical data center. 
+- They are more secure. 
+- They are available from anywhere on the Internet. 
