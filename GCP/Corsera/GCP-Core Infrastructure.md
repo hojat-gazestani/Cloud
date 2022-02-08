@@ -11,6 +11,9 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [todo](#todo)
 - [Networking Fundamentals](#Networking-Fundamentals)
   - [compnents](#compnents)
+  - [resources](#resources)
+  - [Regions and Zones](#Regions-and-Zones)
+  - [Virtual Private Cloud (VPC)](#Virtual-Private-Cloud-(VPC))
 
 
 
@@ -125,3 +128,53 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   * Firewalls
   
 * Essentially, we’ll be going over this diagram: 
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/1-diagram.png)
+
+* GCP has 11 regions, 33 zones and over 100 points of presence throughout the globe. 
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/2-regions-zones.png)
+
+### Regions and Zones
+* When building an application for high availability and fault tolerance, it’s crucial to distribute your resources across multiple zones and regions. 
+
+
+* Zones are independent of each other, with completely separate physical infrastructure, networking, and isolated control planes that ensure typical failure events only affect that zone. 
+
+
+* Another design consideration is speed and latency.  Zones have high-bandwidth, low-latency connections to other zones in the same region. 
+
+
+* A region is a specific geographical location that is sub-divided into zones. 
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/2-regions-zones.png)
+
+* regions: 
+  * To bring their applications closer to users around the world, and for improved fault tolerance
+
+
+### resources
+* Global Resources: 
+  * 
+  * Images 
+  * Snapshots 
+  * VPC Network 
+  * Firewalls 
+  * Routes 
+
+* Regional Resources:
+  * Static external IP addresses
+  * Subnets 
+
+* Zonal Resources:
+  * Instances (VMs)
+  * Persistent Disks
+
+![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/4-disks-images.png)
+
+### Virtual Private Cloud (VPC) 
+* global private isolated virtual network partition that provides managed networking functionality for your GCP resources. 
+
+* global, spanning all regions. 
+
+* The instances within the VPC have internal IP addresses and can communicate privately with each other across the globe. 
+
+![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/3-network-components/5-routing-vpc.png)
+
