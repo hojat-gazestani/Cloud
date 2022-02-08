@@ -50,7 +50,7 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 
 ### Paas
 * Platform as a Service 
-  * let you bind your application code to libraries that give access to the infrastructure your application needs 
+* let you bind your application code to libraries that give access to the infrastructure your application needs 
 
 
 ### Infrastructure as a Service
