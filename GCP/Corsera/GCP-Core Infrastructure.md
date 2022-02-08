@@ -307,3 +307,4 @@ Each VM instance in GCP will have an internal IP address and typically an extern
 
 Ways to getting data into your cloud: 
 
+![alt text](#https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/5-%20Cloud%20storage/0-cloud-storage.png)
