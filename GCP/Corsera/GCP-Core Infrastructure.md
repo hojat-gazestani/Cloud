@@ -34,6 +34,9 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [Introduction to Kubernetes and GKE](#Introduction-to-Kubernetes-and-GKE)
   - [Course Labs](#Course-Labs)
   - [questions](#questions)
+- [introduction to App Engine](#introduction-to-App-Engine)
+  - [Google App Engine Standard Environment](#Google-App-Engine-Standard-Environment)
+  - [Google App Engine Flexible Environment](#Google-App-Engine-Flexible-Environment)
 
 
 ### GCP services
@@ -741,3 +744,52 @@ kubectl get services
 
 * Where do your Kubernetes Engine workloads run?
   * In clusters built from Compute Engine virtual machines
+
+## introduction to App Engine
+
+* App Engine (PaaS)
+* Don't  focus on the infrastructure at all, Only focus on your code. 
+* App engine will scale your application automatically in response to the amount of traffic it receives. 
+
+* App Engine offers two environments:
+  * standard
+  * flexible
+
+* built-in services
+  * NoSQL databases, 
+  * in-memory caching, 
+  * load balancing, 
+  * health checks, 
+  * logging, 
+  * authenticate users. 
+
+### Google App Engine Standard Environment
+
+* It offers a simpler deployment experience than the Flexible environment and fine-grained auto-scale.
+* low utilization applications might be able to run at no charge.
+  * ![alt text](1)
+
+### Google App Engine Flexible Environment
+* Build and deploy containerized apps with a click
+* No sandbox constaints
+* Can access App Engine resource
+
+* Your application runs inside Docker containers on Google Compute Engine Virtual Machines, VMs.
+
+* health checked, 
+* healed as necessary, 
+* choose which geographical region they run in,
+* and critical backward-compatible updates 
+
+* App Engine services
+  * data store, 
+  * memcached, 
+  * task queues, 
+  * and so on
+
+* comparing 
+* ![alt text](2)
+
+* compair kubernetes with app engine
+* ![alt text](3)
+
