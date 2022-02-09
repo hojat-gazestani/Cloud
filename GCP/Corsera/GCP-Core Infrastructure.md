@@ -538,7 +538,7 @@ in the cloud. Which Google Cloud Platform storage option is the best choice for 
   * Cloud Storage
   
 ## Containers, Kubernetes, and Kubernetes Engine
-
+==========================================================
 * IaaS
   * Offering let you share compute resources with others by virtualizing the hardware.
   * Each Virtual Machine has its own instance of an operating system, your choice, and you can build and run applications on it with access to memory, file systems, networking interfaces, and the other attributes that physical computers also have
@@ -559,7 +559,7 @@ in the cloud. Which Google Cloud Platform storage option is the best choice for 
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/6-kubernetes/5-scales.png)
 
 ###  Container
-
+--------------
 * give you the independent scalability of workloads like you get in a PaaS environment, and an abstraction layer of the operating system and hardware, like you get in an Infrastructure as a Service environment.
 * What do you get as an invisible box around your code and its dependencies with limited access to its own partition of the file system and hardware?
 
@@ -590,6 +590,6 @@ in the cloud. Which Google Cloud Platform storage option is the best choice for 
   * Containers package your application into equally sized components.
 
 ### Introduction to Kubernetes and GKE
-
+--------------------------------------
 
 
