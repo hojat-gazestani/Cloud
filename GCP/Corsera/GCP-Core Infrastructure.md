@@ -695,3 +695,19 @@ kubectl get services
 
 ### 
 
+* Identify two reasons for deploying applications using containers.
+  * Consistency across development, testing, production environments
+  * Simpler to migrate workloads
+
+* True : Kubernetes allows you to manage container clusters in multiple cloud providers. 
+
+* True : Google Cloud Platform provides a secure, high-speed container image storage service for use with Kubernetes Engine.
+
+* In Kubernetes, what does "pod" refer to?
+  * A group of containers that work together
+  
+* Does Google Cloud Platform offer its own tool for building containers (other than the ordinary docker command)? 
+  *Yes; the GCP-provided tool is an option, but customers may choose not use it.
+
+* Where do your Kubernetes Engine workloads run?
+  * In clusters built from Compute Engine virtual machines
