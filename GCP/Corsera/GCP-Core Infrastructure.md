@@ -32,7 +32,8 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [Container](#Container)
   - [question](#question)
   - [Introduction to Kubernetes and GKE](#Introduction-to-Kubernetes-and-GKE)
-
+  - [Course Labs](#Course-Labs)
+  - [questions](#questions)
 
 
 ### GCP services
@@ -693,7 +694,41 @@ kubectl get services
   * maintaining the consistency of your applications across all of your network, 
   * whether on-premises, in the Cloud, or in multiple clouds. 
 
-### 
+##  Course Labs
+
+Confirm that needed APIs are enabled
+------------------------------------
+* Navigation menu -> APIs & Services
+* Kubernetes Engine API
+* Container Registry API
+
+
+Start a Kubernetes Engine cluster
+----------------------------------
+```commandline
+gcloud container clusters create webfrontend --zone us-central1-a --num-nodes 2
+kubectl version
+
+```
+Compute Engine > VM Instances.
+
+
+Run and deploy a container
+--------------------------
+```commandline
+kubectl create deploy nginx --image=nginx:1.17.10
+kubectl get pods
+
+kubectl expose deployment nginx --port 80 --type LoadBalancer
+kubectl get services
+Open a new web browser tab and paste your cluster's external IP
+
+kubectl scale deployment nginx --replicas 3
+kubectl get pods
+kubectl get services
+```
+
+### questions
 
 * Identify two reasons for deploying applications using containers.
   * Consistency across development, testing, production environments
