@@ -654,7 +654,7 @@ kubectl autoscale nginx --min=10 --max=15 --cpu=80
 
 * Instead of issuing commands, you provide a configuration file that tells Kubernetes what you want your desired state to look like and Kubernetes figures out how to do it.
   * 
-![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/9-file.png)
+  * ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/9-file.png)
 
 * After change, run the kubectl apply command to use the updated config file. 
 ```
