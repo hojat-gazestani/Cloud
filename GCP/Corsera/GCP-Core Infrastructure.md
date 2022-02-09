@@ -928,4 +928,5 @@ What is the advantage of putting event-driven components of your application int
 * Stackdriver is GCP's tool for monitoring, logging and diagnostics.
 
 * core components
-* ![alt text](1)
+* ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/10-monitoring/1-core-component.png)
+
