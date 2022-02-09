@@ -930,3 +930,112 @@ What is the advantage of putting event-driven components of your application int
 * core components
 * ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/10-monitoring/1-core-component.png)
 
+##  Course Labs
+
+### Confirm that needed APIs are enabled
+```commandline
+Navigation menu, click APIs & services ->  confirm that these APIs are enabled:
+Cloud Deployment Manager v2 API
+Cloud Runtime Configuration API
+Stackdriver monitoring API
+```
+
+### Create a Deployment Manager deployment
+
+* Cloud Shell button -> 
+```
+export MY_ZONE=
+export MY_ZONE=us-central1-a
+```
+
+```
+gsutil cp gs://cloud-training/gcpfcoreinfra/mydeploy.yaml mydeploy.yaml
+sed -i -e "s/PROJECT_ID/$DEVSHELL_PROJECT_ID/" mydeploy.yaml
+sed -i -e "s/ZONE/$MY_ZONE/" mydeploy.yaml
+
+cat mydeploy.yaml
+  resources:
+  - name: my-vm
+    type: compute.v1.instance
+    properties:
+      zone: us-central1-a
+      machineType: zones/us-central1-a/machineTypes/n1-standard-1
+      metadata:
+        items:
+        - key: startup-script
+          value: "apt-get update"
+      disks:
+      - deviceName: boot
+        type: PERSISTENT
+        boot: true
+        autoDelete: true
+        initializeParams:
+          sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-9-stretch-v20180806
+      networkInterfaces:
+      - network: https://www.googleapis.com/compute/v1/projects/qwiklabs-gcp-dcdf854d278b50cd/global/networks/default
+        accessConfigs:
+        - name: External NAT
+          type: ONE_TO_ONE_NAT
+
+
+gcloud deployment-manager deployments create my-first-depl --config mydeploy.yaml
+gcloud deployment-manager deployments list
+
+Navigation menu (￼), click Compute Engine > VM instances
+Click on the VM instance
+Custom metadata
+```
+### Update a Deployment Manager deployment
+```
+nano mydeploy.yaml
+      value: "apt-get update; apt-get install nginx-light -y"
+Ctrl+O, Enter
+Ctrl+X
+
+gcloud deployment-manager deployments update my-first-depl --config mydeploy.yaml
+
+ Navigation menu (￼), click Compute Engine > VM instances.
+ 
+my-vm VM instance's -> VM instance details -> Custom metadata 
+
+### View the Load on a VM using Cloud Monitoring
+
+Navigation menu (￼), click Compute Engine > VM instances.
+
+my-vm -> STOP
+EDIT (pencil icon
+Compute Engine default service account
+Allow full access to all Cloud APIs
+Save
+
+Start
+
+START
+
+
+Navigation menu (￼), click Compute Engine > VM instances.
+
+my-vm instance, click SSH in its row in the VM instances list.
+dd if=/dev/urandom | gzip -9 >> /dev/null &
+```
+
+### Create a Monitoring workspace
+```
+ Navigation menu > Monitoring.
+
+Settings -> GCP Projects 
+
+curl -sSO https://dl.google.com/cloudagents/install-monitoring-agent.sh
+sudo bash install-monitoring-agent.sh
+
+
+curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh
+sudo bash install-logging-agent.sh
+
+Metrics Explorer
+n the Metric pane of Metrics Explorer, select the resource type VM instance and the metric CPU usage.
+
+ Return to your ssh session on my-vm
+ 
+ kill %1
+```
