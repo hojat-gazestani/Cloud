@@ -628,7 +628,8 @@ kubectl expose deployments nginx --port=80 --type=LoadBalancer
 ```
 
 
-* Kubernetes then creates a service with a fixed IP address for your pods. 
+* Kubernetes then creates a service with a fixed IP address for your pods.
+
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/6-services.png)
 
 * A service is the fundamental way Kubernetes represents load balancing. To be specific, you requested Kubernetes to attach an external load balancer with a public IP address to your service so that others outside the cluster can access it.
