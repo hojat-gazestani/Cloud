@@ -37,6 +37,13 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 - [introduction to App Engine](#introduction-to-App-Engine)
   - [Google App Engine Standard Environment](#Google-App-Engine-Standard-Environment)
   - [Google App Engine Flexible Environment](#Google-App-Engine-Flexible-Environment)
+  - [questions](#questions)
+  - [Google Cloud Endpoints and Apigee Edge](#Google-Cloud-Endpoints-and-Apigee-Edge)
+  - [Demonstration: Getting Started with App Engine](#Demonstration:-Getting-Started-with-App-Engine)
+  - [questions](#questions)
+- [Development in the cloud](#Development-in-the-cloud)
+  - [Deployment: Infrastructure as code](#Deployment:-Infrastructure-as-code)
+- [Monitoring: Proactive instrumentation](#Monitoring:-Proactive-instrumentation)
 
 
 ### GCP services
@@ -793,5 +800,132 @@ kubectl get services
 * compair kubernetes with app engine
 * ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/9-AppEngine/3-compare.png)
 
+### questions
+* Which of these criteria would make you choose App Engine Flexible Environment, rather than Standard Environment, for your application? Choose all that are correct (2 correct responses).
+  * Ability to ssh in 
+  * Finer-grained scaling
+
+* True : App Engine Flexible Environment applications let their owners control the geographic region where they run.
+
+### Google Cloud Endpoints and Apigee Edge
+
+* API
+  * A clean, well-defined interface that abstracts away needless details and then they document that interface
+* ![alt text](4)
+
+* Google Cloud platform provides two API management tools
+  * Cloud Endpoints supports applications running in GCP's compute platforms in your choice of languages and your choice of client technologies. 
+  * Apigee Edge is also a platform for developing and managing API proxies. Focus onbusiness problems like rate limiting, quotas, and analytics.  business problems like rate limiting, quotas, and analytics. 
+    * need not be in GCP, engineers often use it when they are "taking apart" a legacy application
+    * Instead of replacing a monolithic application in one risky move, they can instead use Apigee Edge to peel off its services one by one, standing up microservices to implement each in turn, until the legacy application can be finally retired.
+
+### Demonstration: Getting Started with App Engine
+
+### Activate Google Cloud Shell
+```commandline
+gcloud auth list
+gcloud config list project
+```
+
+### Initialize App Engine
+```commandline
+gcloud app create --project=qwiklabs-gcp-04-3a06c7b0a06b
+git clone https://github.com/GoogleCloudPlatform/python-docs-samples
+cd python-docs-samples/appengine/standard_python3/hello_world
+```
+
+### Run Hello World application locally
+```commandline
+sudo apt-get update
+sudo apt-get install virtualenv
+
+virtualenv -p python3 venv
+
+source venv/bin/activate
+pip install  -r requirements.txt
+python main.py
+
+Cloud Shell ->  Web preview -> Preview on port 8080
+Ctrl+C
+ 
+Navigation menu ->  App Engine > Dashboard.
+Notice that no resources are deployed.
+```
+ 
+ 
+### Deploy and run Hello World on App Engine
+```commandline
+cd ~/python-docs-samples/appengine/standard_python3/hello_world
+gcloud app deploy
+
+http://YOUR_PROJECT_ID.appspot.com
+gcloud app browse
+```
+
+### Disable the application
+```commandline
+Navigation menu -> App Engine > Settings.
+Disable application.
+```
+
+### questions
+* Which statements are true about App Engine? Choose all that are true (2 correct answers).
+  * It is possible for an App Engine application's daily billing to drop to zero.
+  * App Engine manages the hardware and networking infrastructure required to run your code. 
+
+* Name 3 advantages of using the App Engine Flexible Environment over App Engine Standard. Choose all that are true (3 correct answers).
+  *Your application can write to local disk
+  *You can install third-party binaries
+  *You can SSH in to your application
 
 
+* Name 3 advantages of using the App Engine Standard Environment over App Engine Flexible. Choose all that are true (3 correct answers).
+  * You can choose any programming language
+  * Scaling is finer-grained
+  *￼Billing can drop to zero if your application is idle
+
+* You want to do business analytics and billing on a customer-facing API. Which GCP service should you choose?
+  * Apigee Edge
+
+* You want to support developers who are building services in GCP through API logging and monitoring. Which GCP service should you choose?
+  * Cloud Endpoints
+
+* You want to gradually decompose a pre-existing monolithic application, not implemented in GCP, into microservices. Which GCP service should you choose?
+  * Apigee Edge
+
+## Development in the cloud
+
+* Cloud Source Repositories
+  * keep code private to a GCP project and use IAM permissions to protect it, but not have to maintain the Git instance yourself.
+  * It provides Git version control to support your team's development of any application or 
+  * service, including:
+    * those that run on App Engine,
+    * Compute Engine,
+    * and Kubernetes Engine.
+    * With Cloud Source Repositories, 
+
+* source viewer 
+  * you can browse and view repository files from within the GCP console.
+
+* Cloud Functions
+  * provide compute resources, no matter whether it happens once a day or once a millisecond.
+  * write a single purpose function that did the necessary image manipulations and then arrange for it to automatically run whenever a new image gets uploaded. 
+  * Cloud Functions can trigger on events in Cloud Storage, Cloud Pub/Sub, or in HTTP call. 
+
+### Deployment: Infrastructure as code
+* provide repeatable deployments
+* Create a yaml template describing your environment and use deplyement Manger to create resources 
+
+1.
+Question 1
+What is the advantage of putting event-driven components of your application into Cloud Functions?
+
+### question
+* Cloud Functions means that processing always happens free of charge.
+  * Correct! Your code executes whenever an event triggers it, no matter whether it happens rarely or many times per second. That means you don't have to provision compute resources to handle these operations.
+
+## Monitoring: Proactive instrumentation
+* Stackdriver is GCP's tool for monitoring, logging and diagnostics.
+
+* core components
+* ![alt text](1)
