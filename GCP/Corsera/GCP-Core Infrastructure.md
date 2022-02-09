@@ -39,11 +39,11 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [Google App Engine Flexible Environment](#Google-App-Engine-Flexible-Environment)
   - [questions](#questions)
   - [Google Cloud Endpoints and Apigee Edge](#Google-Cloud-Endpoints-and-Apigee-Edge)
-  - [Demonstration: Getting Started with App Engine](#Demonstration:-Getting-Started-with-App-Engine)
+  - [Demonstration Getting Started with App Engine](#Demonstration-Getting-Started-with-App-Engine)
   - [questions](#questions)
 - [Development in the cloud](#Development-in-the-cloud)
-  - [Deployment: Infrastructure as code](#Deployment:-Infrastructure-as-code)
-- [Monitoring: Proactive instrumentation](#Monitoring:-Proactive-instrumentation)
+  - [Deployment Infrastructure as code](#Deployment-Infrastructure-as-code)
+- [Monitoring Proactive instrumentation](#Monitoring-Proactive-instrumentation)
 
 
 ### GCP services
@@ -819,7 +819,7 @@ kubectl get services
     * need not be in GCP, engineers often use it when they are "taking apart" a legacy application
     * Instead of replacing a monolithic application in one risky move, they can instead use Apigee Edge to peel off its services one by one, standing up microservices to implement each in turn, until the legacy application can be finally retired.
 
-### Demonstration: Getting Started with App Engine
+### Demonstration Getting Started with App Engine
 
 ### Activate Google Cloud Shell
 ```commandline
@@ -912,7 +912,7 @@ Disable application.
   * write a single purpose function that did the necessary image manipulations and then arrange for it to automatically run whenever a new image gets uploaded. 
   * Cloud Functions can trigger on events in Cloud Storage, Cloud Pub/Sub, or in HTTP call. 
 
-### Deployment: Infrastructure as code
+### Deployment Infrastructure as code
 * provide repeatable deployments
 * Create a yaml template describing your environment and use deplyement Manger to create resources 
 
@@ -924,7 +924,7 @@ What is the advantage of putting event-driven components of your application int
 * Cloud Functions means that processing always happens free of charge.
   * Correct! Your code executes whenever an event triggers it, no matter whether it happens rarely or many times per second. That means you don't have to provision compute resources to handle these operations.
 
-## Monitoring: Proactive instrumentation
+## Monitoring Proactive instrumentation
 * Stackdriver is GCP's tool for monitoring, logging and diagnostics.
 
 * core components
