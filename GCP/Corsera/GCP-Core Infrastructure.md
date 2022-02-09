@@ -596,22 +596,18 @@ in the cloud. Which Google Cloud Platform storage option is the best choice for 
 
 * kubernetes
   * Kubernetes offers an API that lets people, that is authorized people, not just anybody, control its operation through several utilities. 
-
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/1-kubernetes.png)
 
 * cluster
   * It's a set of master components that control the system as a whole and a set of nodes that run containers.
-
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/2-cluster.png)
 
 * Google cloud kubernetes
   * Google Cloud provides Kubernetes Engine, which is Kubernetes as a managed service in the cloud. 
-
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/3-gcp-kubernetes.png)
 
 * pod
   * A pod is the smallest deployable unit in Kubernetes. Think of a pod as if it were a running process on your cluster. It could be one component of your application or even an entire application.
-
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/4-pod.png)
 
   * One way to run a container in a pod in Kubernetes is to use the kubectl run command.
@@ -633,20 +629,17 @@ kubectl expose deployments nginx --port=80 --type=LoadBalancer
 
 
 * Kubernetes then creates a service with a fixed IP address for your pods. 
-
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/6-services.png)
 
 * A service is the fundamental way Kubernetes represents load balancing. To be specific, you requested Kubernetes to attach an external load balancer with a public IP address to your service so that others outside the cluster can access it.
 
 * Any client that hits that IP address will be routed to a pod behind the service.
-
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/7-client.png)
 
 
 * The kubectl get services command shows you your service's public IP address
 
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/8-get.png)
-
 * To scale a deployment, run the kubectl scale command.
 ```commandline
 kubectl scale nginx --replica=3
