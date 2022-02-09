@@ -538,7 +538,8 @@ in the cloud. Which Google Cloud Platform storage option is the best choice for 
   * Cloud Storage
   
 ## Containers, Kubernetes, and Kubernetes Engine
-==========================================================
+------------------------------------------------
+
 * IaaS
   * Offering let you share compute resources with others by virtualizing the hardware.
   * Each Virtual Machine has its own instance of an operating system, your choice, and you can build and run applications on it with access to memory, file systems, networking interfaces, and the other attributes that physical computers also have
@@ -559,7 +560,7 @@ in the cloud. Which Google Cloud Platform storage option is the best choice for 
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/6-kubernetes/5-scales.png)
 
 ###  Container
---------------
+
 * give you the independent scalability of workloads like you get in a PaaS environment, and an abstraction layer of the operating system and hardware, like you get in an Infrastructure as a Service environment.
 * What do you get as an invisible box around your code and its dependencies with limited access to its own partition of the file system and hardware?
 
@@ -590,6 +591,107 @@ in the cloud. Which Google Cloud Platform storage option is the best choice for 
   * Containers package your application into equally sized components.
 
 ### Introduction to Kubernetes and GKE
---------------------------------------
 
+
+* kubernetes
+  * Kubernetes offers an API that lets people, that is authorized people, not just anybody, control its operation through several utilities. 
+
+![alt text](1)
+
+* cluster
+  * It's a set of master components that control the system as a whole and a set of nodes that run containers.
+
+![alt text](2)
+
+* Google cloud kubernetes
+  * Google Cloud provides Kubernetes Engine, which is Kubernetes as a managed service in the cloud. 
+
+![alt text](3)
+
+* pod
+  * A pod is the smallest deployable unit in Kubernetes. Think of a pod as if it were a running process on your cluster. It could be one component of your application or even an entire application.
+
+![alt text](4)
+
+  * One way to run a container in a pod in Kubernetes is to use the kubectl run command.
+  ![alt text](5)
+
+```commandline
+kubectl run nginx --image=nginx:1.15.7
+```
+
+To see the running nginx pods, run the command 
+```commandline
+kubectl get pods
+```
+
+To make the pods in your deployment publicly available, you can connect a load balancer to it by running the kubectl expose command.
+```commandline
+kubectl expose deployments nginx --port=80 --type=LoadBalancer
+```
+
+
+* Kubernetes then creates a service with a fixed IP address for your pods. 
+
+![alt text](6)
+
+* A service is the fundamental way Kubernetes represents load balancing. To be specific, you requested Kubernetes to attach an external load balancer with a public IP address to your service so that others outside the cluster can access it.
+
+* Any client that hits that IP address will be routed to a pod behind the service.
+
+![alt text](7)
+
+
+* The kubectl get services command shows you your service's public IP address
+
+![alt text](8)
+
+* To scale a deployment, run the kubectl scale command.
+```commandline
+kubectl scale nginx --replica=3
+```
+
+* You could also use auto scaling with all kinds of useful parameters. For example, here's how to auto scale a deployment based on CPU usage
+*  Kubernetes will scale up the number of pods when CPU usage hits 80% of capacity. 
+```commandline
+kubectl autoscale nginx --min=10 --max=15 --cpu=80
+```
+
+* Instead of issuing commands, you provide a configuration file that tells Kubernetes what you want your desired state to look like and Kubernetes figures out how to do it.
+![alt text](9)
+
+* After change, run the kubectl apply command to use the updated config file. 
+```
+kubectl apply -f nginx-deployment.yml
+```
+
+use the kubectl get replicasets command to view your replicas and see their updated state. 
+```commandline
+kubectl get replicasets
+```
+
+to watch the pods come online
+```commandline
+kubectl get pods
+```
+
+let's check the deployments to make sure the proper number of replicas are running 
+```commandline
+kubectl get deployments
+```
+
+The kubectl get services command confirms that the external IP of the service is unaffected.
+```commandline
+kubectl get services
+```
+
+### Introduction to Hybrid and Multi-Cloud Computing (Anthos)
+
+* Anthos is a hybrid and multi-cloud solution powered by the latest innovations in distributed systems, and service management software from Google. The Anthos framework rests on Kubernetes and Google Kubernetes engine deployed on-prem. 
+* Anthos also provides a rich set of tools for 
+  * monitoring and 
+  * maintaining the consistency of your applications across all of your network, 
+  * whether on-premises, in the Cloud, or in multiple clouds. 
+
+### 
 
