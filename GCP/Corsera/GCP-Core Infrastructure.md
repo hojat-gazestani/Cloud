@@ -28,6 +28,9 @@ Google Cloud Fundamentals: Core Infrastructure - Note
   - [Comparing Storage Options](#Comparing-Storage-Options)
   - [Course Labs](#Course-Labs)
   - [questions](#questions)
+-[Containers, Kubernetes, and Kubernetes Engine](#Containers,-Kubernetes,-and-Kubernetes-Engine)
+  - [Container](#Container)
+  - [question](#question)
 
 
 
@@ -532,4 +535,57 @@ in the cloud. Which Google Cloud Platform storage option is the best choice for 
 
 * Which GCP storage service is often the ingestion point for data being moved into the cloud, and is frequently the long-term storage location for data?
   * Cloud Storage
+  
+## Containers, Kubernetes, and Kubernetes Engine
+
+* IaaS
+  * Offering let you share compute resources with others by virtualizing the hardware.
+  * Each Virtual Machine has its own instance of an operating system, your choice, and you can build and run applications on it with access to memory, file systems, networking interfaces, and the other attributes that physical computers also have
+
+![alt text](1)
+
+* PaaS (App Engine)
+  * Instead of getting a blank Virtual Machine, you get access to a family of services that applications need. 
+
+![alt text](3)
+
+* So all you do is write your code and self-contained workloads that use these services and include any dependent libraries. 
+
+![alt text](4)
+
+* As demand for your application increases, the platform scales your applications seamlessly and independently by workload and infrastructure.
+
+![alt text](5)
+
+###  Container
+
+* give you the independent scalability of workloads like you get in a PaaS environment, and an abstraction layer of the operating system and hardware, like you get in an Infrastructure as a Service environment.
+* What do you get as an invisible box around your code and its dependencies with limited access to its own partition of the file system and hardware?
+
+![alt text](6)
+
+* You can treat the operating system and hardware as a black box. So you can move your code from development, to staging, to production, or from your laptop to the Cloud without changing or rebuilding anything. 
+
+![alt text](7)
+
+* Kubernetes
+  * In microservice infrastructure, you can make applications modular. They deploy it easily and scale independently across a group of hosts. The host can scale up and down, and start and stop Containers as demand for your application changes, or even as hosts fail and are replaced.
+ 
+![alt text](8)
+
+* A tool that helps you do this well is Kubernetes. Kubernetes makes it easy to orchestrate many Containers on many hosts. Scale them, roll out new versions of them, and even roll back to the old version if things go wrong.
+
+![alt text](9)
+
+* Cloud Build
+  * a managed service for building Containers. 
+
+### question
+* false: each container has its own instance of an operating system.
+
+
+* Containers are loosely coupled to their environments
+  * Deploying a containerized application consumes less resources and is less error-prone than deploying an application in virtual machines. ￼
+  * Containers abstract away unimportant details of their environments.
+  * Containers package your application into equally sized components.
 
