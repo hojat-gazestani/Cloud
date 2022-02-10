@@ -44,6 +44,8 @@ Google Cloud Fundamentals: Core Infrastructure - Note
 - [Development in the cloud](#Development-in-the-cloud)
   - [Deployment Infrastructure as code](#Deployment-Infrastructure-as-code)
 - [Monitoring Proactive instrumentation](#Monitoring-Proactive-instrumentation)
+- [Big Data](#Big-Data)
+  - [Introduction to Big Data and Machine Learning](#Introduction-to-Big-Data-and-Machine-Learning)
 
 
 ### GCP services
@@ -508,7 +510,7 @@ Database connection succeeded.
 
 ### Configure an application in a Compute Engine instance to use a Cloud Storage object
 ```commandline
-Cloud Storage > Browser.
+Cloud Storage: Browser.
 bucket that is named after your GCP project.
 my-excellent-blog.png opy the URL behind
 Public access
@@ -637,7 +639,6 @@ To make the pods in your deployment publicly available, you can connect a load b
 kubectl expose deployments nginx --port=80 --type=LoadBalancer
 ```
 
-
 * Kubernetes then creates a service with a fixed IP address for your pods.
 
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/6-services.png)
@@ -646,7 +647,6 @@ kubectl expose deployments nginx --port=80 --type=LoadBalancer
 
 * Any client that hits that IP address will be routed to a pod behind the service.
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/7-client.png)
-
 
 * The kubectl get services command shows you your service's public IP address
 
@@ -662,8 +662,7 @@ kubectl scale nginx --replica=3
 kubectl autoscale nginx --min=10 --max=15 --cpu=80
 ```
 
-* Instead of issuing commands, you provide a configuration file that tells Kubernetes what you want your desired state to look like and Kubernetes figures out how to do it.
-  * 
+* Instead of issuing commands, you provide a configuration file that tells Kubernetes what you want your desired state to look like and Kubernetes figures out how to do it.  
   * ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/7-kubernetes/9-file.png)
 
 * After change, run the kubectl apply command to use the updated config file. 
@@ -707,7 +706,6 @@ Confirm that needed APIs are enabled
 * Kubernetes Engine API
 * Container Registry API
 
-
 Start a Kubernetes Engine cluster
 ----------------------------------
 ```commandline
@@ -717,7 +715,6 @@ kubectl version
 ```
 Compute Engine > VM Instances.
 
-
 Run and deploy a container
 --------------------------
 ```commandline
@@ -726,7 +723,7 @@ kubectl get pods
 
 kubectl expose deployment nginx --port 80 --type LoadBalancer
 kubectl get services
-Open a new web browser tab and paste your cluster's external IP
+Open a new web browser tab and paste your cluster external IP
 
 kubectl scale deployment nginx --replicas 3
 kubectl get pods
@@ -811,7 +808,7 @@ kubectl get services
 
 * API
   * A clean, well-defined interface that abstracts away needless details and then they document that interface
-* ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/9-1-api/4-api.png)
+  * ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/9-1-api/4-api.png)
 
 * Google Cloud platform provides two API management tools
   * Cloud Endpoints supports applications running in GCP's compute platforms in your choice of languages and your choice of client technologies. 
@@ -845,10 +842,10 @@ source venv/bin/activate
 pip install  -r requirements.txt
 python main.py
 
-Cloud Shell ->  Web preview -> Preview on port 8080
-Ctrl+C
+Cloud Shell: Web preview: Preview on port 8080
+Ctrl-C
  
-Navigation menu ->  App Engine > Dashboard.
+Navigation menu: App Engine: Dashboard.
 Notice that no resources are deployed.
 ```
  
@@ -864,7 +861,7 @@ gcloud app browse
 
 ### Disable the application
 ```commandline
-Navigation menu -> App Engine > Settings.
+Navigation menu: App Engine: Settings.
 Disable application.
 ```
 
@@ -914,10 +911,8 @@ Disable application.
 
 ### Deployment Infrastructure as code
 * provide repeatable deployments
-* Create a yaml template describing your environment and use deplyement Manger to create resources 
+* Create a yaml template describing your environment and use deplyement Manger to create resources
 
-1.
-Question 1
 What is the advantage of putting event-driven components of your application into Cloud Functions?
 
 ### question
@@ -934,7 +929,7 @@ What is the advantage of putting event-driven components of your application int
 
 ### Confirm that needed APIs are enabled
 ```commandline
-Navigation menu, click APIs & services ->  confirm that these APIs are enabled:
+Navigation menu click APIs and services:  confirm that these APIs are enabled:
 Cloud Deployment Manager v2 API
 Cloud Runtime Configuration API
 Stackdriver monitoring API
@@ -985,6 +980,7 @@ Navigation menu (￼), click Compute Engine > VM instances
 Click on the VM instance
 Custom metadata
 ```
+
 ### Update a Deployment Manager deployment
 ```
 nano mydeploy.yaml
@@ -997,9 +993,10 @@ gcloud deployment-manager deployments update my-first-depl --config mydeploy.yam
  Navigation menu (￼), click Compute Engine > VM instances.
  
 my-vm VM instance's -> VM instance details -> Custom metadata 
+```
 
 ### View the Load on a VM using Cloud Monitoring
-
+```
 Navigation menu (￼), click Compute Engine > VM instances.
 
 my-vm -> STOP
@@ -1007,11 +1004,8 @@ EDIT (pencil icon
 Compute Engine default service account
 Allow full access to all Cloud APIs
 Save
-
 Start
-
 START
-
 
 Navigation menu (￼), click Compute Engine > VM instances.
 
@@ -1021,13 +1015,11 @@ dd if=/dev/urandom | gzip -9 >> /dev/null &
 
 ### Create a Monitoring workspace
 ```
- Navigation menu > Monitoring.
-
+Navigation menu > Monitoring.
 Settings -> GCP Projects 
 
 curl -sSO https://dl.google.com/cloudagents/install-monitoring-agent.sh
 sudo bash install-monitoring-agent.sh
-
 
 curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh
 sudo bash install-logging-agent.sh
@@ -1035,7 +1027,51 @@ sudo bash install-logging-agent.sh
 Metrics Explorer
 n the Metric pane of Metrics Explorer, select the resource type VM instance and the metric CPU usage.
 
- Return to your ssh session on my-vm
+Return to your ssh session on my-vm
  
- kill %1
+kill %1
 ```
+
+### question
+* Why might a GCP customer choose to use Cloud Source Repositories?
+  * They don't want to host their own git instance, and they want to integrate with IAM permissions.
+
+* Why might a GCP customer choose to use Cloud Functions?
+  * Their application contains event-driven code that they don't want to have to provision compute resources for.
+
+* Why might a GCP customer choose to use Deployment Manager?
+  * Deployment Manager is an infrastructure management system for GCP resources.
+  
+* You want to define alerts on your GCP resources, such as when health checks fail. Which is the best GCP product to use?
+  * Stackdriver Monitoring
+  
+* Which statements are true about Stackdriver Logging? Choose all that are true
+  * Stackdriver Logging lets you view logs from your applications, and filter and search on them.
+  * Stackdriver Logging lets you define metrics based on your logs.
+
+## Big Data
+
+### Introduction to Big Data and Machine Learning
+* Google's technologies for getting the most out of data fastest. Whether it's real time analytics or machine learning. These tools are intended to be simple and practical for you to embed in your applications so that you can put data into the hands of your domain experts and get insights faster.
+
+### Google Cloud Big Data Platform
+
+* Google Cloud Big Data Solutions are designed to help you transform your business and user experiences with meaningful data insights
+
+* Integrated Serverless Platform:
+  * Serverless means you don't have to worry about provisioning Compute Instances to run your jobs. The services are fully managed, and you pay only for the resources you consume.
+  * The platform is integrated, so that GCP data services work together to help you create custom solutions
+
+![alt text](#1)
+ 
+*Apache Hadoop:
+  * An open source framework for big data. 
+  * It is based on the MapReduce programming model which Google invented and published. 
+  * The MapReduce model is, at its simplest, means that one function, traditionally called the "Map function," runs in parallel with a massive dataset to produce intermediate results. And another function, traditionally called the "Reduce function," builds a final result set based on all those intermediate results. 
+  * The term "Hadoop" is often used informally to encompass Apache Hadoop itself, and related projects such as Apache Spark, Apache Pig, and Apache Hive.
+  
+*Cloud Dataproc
+  * is a fast, easy, managed way to run Hadoop, Spark, Hive, and Pig on Google Cloud Platform.
+
+  * Once your data is in a cluster, you can use Spark and Spark SQL to do data mining. 
+  * And you can use MLib, which is Apache Spark's machine learning libraries to discover patterns through machine learning.
