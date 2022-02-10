@@ -382,9 +382,6 @@ Ways to getting data into your cloud:
   * financial applications, and inventory applications.
 
 * Questions
-  * Which database service can scale to higher database sizes? Cloud Spanner.
-  * Which database service presents a MySQL or PostgreSQL interface to clients? Cloud SQL.
-  * Which database service offers transactional consistency at global scale? Cloud Spanner.
 
 ### Google Cloud Datastore
 * Is a horizontally scalable NoSQL DB
@@ -395,9 +392,8 @@ Ways to getting data into your cloud:
 * free daily quota that provides storage, reads, writes, deletes and small operations at no charge
 
 * Questions
-  * How are Cloud Datastore and Cloud Bigtable alike
-    * They are both highly scalable
-    * They are both NoSQL databases.
+
+
 
 * Cloud Datastore databases CAN span App Engine and Compute Engine applications. 
 
@@ -524,31 +520,7 @@ sudo service apache2 restart
 ```
 
 ### questions
-*You are developing an application that transcodes large video files. Which storage option is the best choice for your application?
-  * Cloud Storage
 
-* You manufacture devices with sensors and need to stream huge amounts of data from these devices to a storage option
-in the cloud. Which Google Cloud Platform storage option is the best choice for your application? 
-  * Cloud Bigtable
-
-* Which statement is true about objects in Cloud Storage?
-  * They are immutable, and new versions overwrite old unless you turn on versioning.
-
-* You are building a small application. If possible, you'd like this application's data storage to be at no additional charge. Which service has a free daily quota, separate from any free trials?
-  * Cloud Datastore
-
-* How do the Nearline and Coldline storage classes differ from Multi-regional and Regional? Choose all that are
-  * Nearline and Coldline assess lower storage fees.
-  * Nearline and Coldline assess additional retrieval fees.
-
-* Your application needs a relational database, and it expects to talk to MySQL. Which storage option is the best choice  for your application?
-  * Cloud SQL
-
-* Your application needs to store data with strong transactional consistency, and you want seamless scaling up. Which storage option is the best choice for your application?
-  * Cloud Spanner
-
-* Which GCP storage service is often the ingestion point for data being moved into the cloud, and is frequently the long-term storage location for data?
-  * Cloud Storage
   
 ## Containers, Kubernetes, and Kubernetes Engine
 ------------------------------------------------
@@ -596,12 +568,6 @@ in the cloud. Which Google Cloud Platform storage option is the best choice for 
   * a managed service for building Containers. 
 
 ### question
-* false: each container has its own instance of an operating system.
-
-* Containers are loosely coupled to their environments
-  * Deploying a containerized application consumes less resources and is less error-prone than deploying an application in virtual machines. ￼
-  * Containers abstract away unimportant details of their environments.
-  * Containers package your application into equally sized components.
 
 ### Introduction to Kubernetes and GKE
 
@@ -732,22 +698,6 @@ kubectl get services
 
 ### questions
 
-* Identify two reasons for deploying applications using containers.
-  * Consistency across development, testing, production environments
-  * Simpler to migrate workloads
-
-* True : Kubernetes allows you to manage container clusters in multiple cloud providers. 
-
-* True : Google Cloud Platform provides a secure, high-speed container image storage service for use with Kubernetes Engine.
-
-* In Kubernetes, what does "pod" refer to?
-  * A group of containers that work together
-  
-* Does Google Cloud Platform offer its own tool for building containers (other than the ordinary docker command)? 
-  *Yes; the GCP-provided tool is an option, but customers may choose not use it.
-
-* Where do your Kubernetes Engine workloads run?
-  * In clusters built from Compute Engine virtual machines
 
 ## introduction to App Engine
 
@@ -798,11 +748,6 @@ kubectl get services
 * ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/9-AppEngine/3-compare.png)
 
 ### questions
-* Which of these criteria would make you choose App Engine Flexible Environment, rather than Standard Environment, for your application? Choose all that are correct (2 correct responses).
-  * Ability to ssh in 
-  * Finer-grained scaling
-
-* True : App Engine Flexible Environment applications let their owners control the geographic region where they run.
 
 ### Google Cloud Endpoints and Apigee Edge
 
@@ -866,29 +811,7 @@ Disable application.
 ```
 
 ### questions
-* Which statements are true about App Engine? Choose all that are true (2 correct answers).
-  * It is possible for an App Engine application's daily billing to drop to zero.
-  * App Engine manages the hardware and networking infrastructure required to run your code. 
 
-* Name 3 advantages of using the App Engine Flexible Environment over App Engine Standard. Choose all that are true (3 correct answers).
-  *Your application can write to local disk
-  *You can install third-party binaries
-  *You can SSH in to your application
-
-
-* Name 3 advantages of using the App Engine Standard Environment over App Engine Flexible. Choose all that are true (3 correct answers).
-  * You can choose any programming language
-  * Scaling is finer-grained
-  *￼Billing can drop to zero if your application is idle
-
-* You want to do business analytics and billing on a customer-facing API. Which GCP service should you choose?
-  * Apigee Edge
-
-* You want to support developers who are building services in GCP through API logging and monitoring. Which GCP service should you choose?
-  * Cloud Endpoints
-
-* You want to gradually decompose a pre-existing monolithic application, not implemented in GCP, into microservices. Which GCP service should you choose?
-  * Apigee Edge
 
 ## Development in the cloud
 
@@ -916,8 +839,6 @@ Disable application.
 What is the advantage of putting event-driven components of your application into Cloud Functions?
 
 ### question
-* Cloud Functions means that processing always happens free of charge.
-  * Correct! Your code executes whenever an event triggers it, no matter whether it happens rarely or many times per second. That means you don't have to provision compute resources to handle these operations.
 
 ## Monitoring Proactive instrumentation
 * Stackdriver is GCP's tool for monitoring, logging and diagnostics.
@@ -1033,21 +954,6 @@ kill %1
 ```
 
 ### question
-* Why might a GCP customer choose to use Cloud Source Repositories?
-  * They don't want to host their own git instance, and they want to integrate with IAM permissions.
-
-* Why might a GCP customer choose to use Cloud Functions?
-  * Their application contains event-driven code that they don't want to have to provision compute resources for.
-
-* Why might a GCP customer choose to use Deployment Manager?
-  * Deployment Manager is an infrastructure management system for GCP resources.
-  
-* You want to define alerts on your GCP resources, such as when health checks fail. Which is the best GCP product to use?
-  * Stackdriver Monitoring
-  
-* Which statements are true about Stackdriver Logging? Choose all that are true
-  * Stackdriver Logging lets you view logs from your applications, and filter and search on them.
-  * Stackdriver Logging lets you define metrics based on your logs.
 
 ## Big Data
 
