@@ -1062,7 +1062,7 @@ kill %1
   * Serverless means you don't have to worry about provisioning Compute Instances to run your jobs. The services are fully managed, and you pay only for the resources you consume.
   * The platform is integrated, so that GCP data services work together to help you create custom solutions
 
-![alt text](#1)
+![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/11-ML/1.png)
  
 *Apache Hadoop:
   * An open source framework for big data. 
