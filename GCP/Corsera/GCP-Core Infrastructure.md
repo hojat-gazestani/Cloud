@@ -1064,14 +1064,98 @@ kill %1
 
 ![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/GCP/Corsera/11-ML/1.png)
  
-*Apache Hadoop:
+* Apache Hadoop:
   * An open source framework for big data. 
   * It is based on the MapReduce programming model which Google invented and published. 
   * The MapReduce model is, at its simplest, means that one function, traditionally called the "Map function," runs in parallel with a massive dataset to produce intermediate results. And another function, traditionally called the "Reduce function," builds a final result set based on all those intermediate results. 
   * The term "Hadoop" is often used informally to encompass Apache Hadoop itself, and related projects such as Apache Spark, Apache Pig, and Apache Hive.
   
-*Cloud Dataproc
+* Cloud Dataproc
   * is a fast, easy, managed way to run Hadoop, Spark, Hive, and Pig on Google Cloud Platform.
 
   * Once your data is in a cluster, you can use Spark and Spark SQL to do data mining. 
   * And you can use MLib, which is Apache Spark's machine learning libraries to discover patterns through machine learning.
+
+* Cloud Dataflow
+  * Cloud Dataproc is great when you have a data set of known size or when you want to manage your cluster size yourself
+  * But what if your data shows up in real time or it's of unpredictable size or rate
+  * It's both a unified programming model and a managed service and it lets you develop and execute a big range of data processing patterns: extract, transform, and load batch computation and continuous computation. 
+  * Dataflow fully automates the management of whatever processing resources are required
+  * Dataflow frees you from operational tasks like resource management and performance optimization. 
+
+  * use cases
+    * general purpose ETL tool
+    * data analysis engine
+    * fraud detection
+    * financial services
+    * IoT analytics and manufacturing
+    * healthcare and logistics and click stream
+    * point of sale and segmentation analysis in retail.
+    * It can be used in real time applications such as personalizing gaming user experiences.
+
+* BigQuery
+  * instead of a dynamic pipeline, your data needs to run more in the way of exploring a vast sea of data
+  * You want to do ad-hoc SQL queries on a massive data set.
+  * you can run super-fast SQL queries against multiple terabytes of data in seconds using the processing power of Google's infrastructure
+
+* Cloud Pub/Sub
+  * Whenever you're working with events in real time, it helps to have a messaging service. That's what Cloud Pub/Sub is. It's meant to serve as a simple, reliable, scalable foundation for stream analytics. You can use it to let independent applications you build send and receive messages. That way they're decoupled, so they scale independently.
+  * Pub: publishers
+  * Sub: subscribers
+
+* Cloud Datalab
+  * takes the management work out of this natural technique. It runs in a Compute Engine virtual machine.
+  * It's integrated with BigQuery, Compute Engine, and Cloud Storage, so accessing your data doesn't run into authentication hassles.
+
+### Google Cloud Machine Learning Platform
+
+* Machine learning APIs
+  * Gain insight form images
+  * Detect inappropriate content
+  * Analyze sentiment
+  * Extract text
+
+* Cloud Natural Language API
+  * Can return text in real time
+  * Highly accurate, even in noisy environments
+  * Access from any device
+  * Uses ML models to revel structure and meaning of text
+  * Extract info about items mentioned in text documents, news, article, and blog post.
+
+* Cloud translation API
+
+* Cloud Video intelligence API
+
+## Review
+
+* Which compute service lets customers run virtual machines that run on Google's infrastructure?
+  * Compute Engine
+  
+* Which compute service lets customers deploy their applications in containers that run in clusters on Google's infrastructure?
+  * Kubernetes Engine
+  
+*Which compute service lets customers focus on their applications, leaving most infrastructure and provisioning to Google, while still offering various choices of runtime?
+  * App Engine
+  
+  * Which compute service lets customers supply chunks of code, which get run on-demand in response to events, on infrastructure wholly managed by Google?
+      * Cloud Functions
+
+For what kind of traffic would the regional load balancer be the first choice? Choose all that are correct (2 answers).
+* UDP traffic
+* TCP traffic on arbitrary port numbers
+
+* Choose a simple way to let a VPN into your Google VPC continue to work in spite of routing changes,
+  * Cloud Router
+
+* Which of these storage needs is best addressed by Cloud Datastore?
+  * Structured objects, with transactions and SQL-like queries
+
+* Which of these storage needs is best addressed by Cloud Spanner?
+  * A relational database with SQL queries and horizontal scalability
+
+* Which of these storage needs is best addressed by Cloud Bigtable?
+  * Structured objects, with lookups based on a single key
+
+
+* Which of these storage needs is best addressed by Cloud Storage?
+  * Immutable binary objects
