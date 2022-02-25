@@ -10,8 +10,8 @@ session2 part1
 ### What is a vpc?
 * VPC : Virtual Private Cloud - Isolated cloud resource Atuoscaling Load balancing
   * test
-  * 
-![alt text](https://github.com/hojat-gazestani/Cloud/blob/main/AWS/Solutions%20Architect/vpc.jpeg)
+  *
+  ![vpv](https://github.com/hojat-gazestani/Cloud/blob/main/AWS/Solutions%20Architect/pic/1-vpc.jpeg)
 
 
 EC2 : Elastic computing cloud
