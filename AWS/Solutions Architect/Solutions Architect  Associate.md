@@ -14,117 +14,121 @@ session2 part1
   ![vpv](https://github.com/hojat-gazestani/Cloud/blob/main/AWS/Solutions%20Architect/pic/1-vpc.jpeg)
 
 
-EC2 : Elastic computing cloud
+* EC2 : Elastic computing cloud
 
-beanstalk: Run quickly web application - Not high available- Frondend web developer Lambda : load code into Amazon - High availibility zones - Backend web developer
+* beanstalk: Run quickly web application - Not high available- Frondend web developer Lambda : load code into Amazon - High availibility zones - Backend web developer
 
-AMI : Amazon Machin image
+* AMI : Amazon Machin image
 
-Direct connect: on-primises Tunnel to AWS
+* Direct connect: on-primises Tunnel to AWS
 
-Route53: DNS
+* Route53: DNS
 
-EBS : Elastic block storage
-Session2 Part3
+* EBS : Elastic block storage
+* Session2 Part3
 
-Storage Gateway : on-promises , software appliaence , cloud storage low latency connection caching
+* Storage Gateway : on-promises , software appliaence , cloud storage low latency connection caching
 
-Cloud front : Content Delivery Network, Edge location
+* Cloud front : Content Delivery Network, Edge location
 
-Database services: SQL : Amazon RDS (Relational database service) Open source NoSQL : Dynamo DB (high-performance, low latency, ) online gaming data warehouse : Amazon redshift (Use SQL to Analyzing structure data) Cach : Amazon Elasticach (In-momeory caching) Gaming real-time, sub-milisecond responce, real-time transaction, BI, Gaming leader board
+* Database services: SQL : Amazon RDS (Relational database service) Open source NoSQL : Dynamo DB (high-performance, low latency, ) online gaming data warehouse : Amazon redshift (Use SQL to Analyzing structure data) Cach : Amazon Elasticach (In-momeory caching) Gaming real-time, sub-milisecond responce, real-time transaction, BI, Gaming leader board
 
-Management tools: monitoring : Cloudwatch Infrastucture as code: Cloud formation (Crete Amazon resource using json files) Log activity : Clouad trail (Track user activity and API usage - Capture, Store, Act, Review) Audit, assess : AWS config ( resource inventory, configuration history, Configuration change, send notification
+* Management tools: monitoring : Cloudwatch Infrastucture as code: Cloud formation (Crete Amazon resource using json files) Log activity : Clouad trail (Track user activity and API usage - Capture, Store, Act, Review) Audit, assess : AWS config ( resource inventory, configuration history, Configuration change, send notification
 
-Security and identity: IAM : AWS identity and access management kms : key management service (Create encryption key e.g: key for IAM) Directory servicee : Microsoft active direcotry Certification manager : Create and manage CA server (SSL/TLS) Web Application firewall :
+* Security and identity: IAM : AWS identity and access management kms : key management service (Create encryption key e.g: key for IAM) Directory servicee : Microsoft active direcotry Certification manager : Create and manage CA server (SSL/TLS) Web Application firewall :
 
-Application service: API gateway : Developer use to create, secure, publish and monitor simple notification service : send push message (like UDP - just send) simple queue service : send push message when consumer asked (like TCP - wait for ack) Simple email service : transaction email, marketing message, content simple wordflow service : create and run workflow Elastic transconding : media transcoding inside cloud.
-Session 3
+* Application service: API gateway : Developer use to create, secure, publish and monitor simple notification service : send push message (like UDP - just send) simple queue service : send push message when consumer asked (like TCP - wait for ack) Simple email service : transaction email, marketing message, content simple wordflow service : create and run workflow Elastic transconding : media transcoding inside cloud.
 
-Amazon simple storage service (S3), Gleciers
 
-S3: secure, durable, high scalble accesable with web service
+## Session 3
 
-Bucket (directory): object container
-					unique user - specified key
-					file name
-					unlimited number of object
+* Amazon simple storage service (S3), Gleciers
+
+* S3: secure, durable, high scalble accesable with web service
+
+* Bucket (directory): object container
+	* unique user - specified key
+	* file name
+	* unlimited number of object
 	
-	target storage
-		kinees 
-		elastic mapreduce
-		emr
+	* target storage
+		* kinees 
+		* elastic mapreduce
+		* emr
 		
-	ebs, aws rds _. snapshot
-	data stage -> aws redshit, dynomoDB
-	backup, archive
-		on-promises
-	content media, software storage
-	big data analytics
-	static website hosting
-	cloud native mibile/ internet app hosting
-	disaster recovery
+	* ebs, aws rds _. snapshot
+	* data stage -> aws redshit, dynomoDB
+	* backup, archive
+		* on-promises
+	* content media, software storage
+	* big data analytics
+	* static website hosting
+	* cloud native mibile/ internet app hosting
+	* disaster recovery
 
-Glaciers Data archving, long term backup, low cost, cold data, 5 hours
-Session 4
-S3 Classes
+* Glaciers Data archving, long term backup, low cost, cold data, 5 hours
 
-5 TB,
+## Session 4
 
-S3 standard (General purpose: frequenty access, High avaiable, low latency, shor and long term )
+* S3 Classes
 
-Intelligent tiering: decrease cost by auto teiring (frequent and archive)
+* 5 TB,
 
-infrequent standard: less frequenty but rapid access
+* S3 standard (General purpose: frequenty access, High avaiable, low latency, shor and long term )
 
-one zone-infrequent:
-Archive (S3 Glacier)
+* Intelligent tiering: decrease cost by auto teiring (frequent and archive)
 
-Data archiving, online backup, 3-5 hours, 40 TB
+* infrequent standard: less frequenty but rapid access
 
-Vault: container using for archive, 100 vault per account IAM policy, vault access policy virtual lock: lock change restore 5% data per month instance retrieval: lowest cost for long-live data retrive in milisecond
+* one zone-infrequent:
+* Archive (S3 Glacier)
 
-flexible retrive : lowest cost for long-live data - access one/two time per years
+* Data archiving, online backup, 3-5 hours, 40 TB
 
-Deep archive : 7-10 years or longer to meet regulatory, ca be restored with 12 hours
-object Life cycle policy
+*  Vault: container using for archive, 100 vault per account IAM policy, vault access policy virtual lock: lock change restore 5% data per month instance retrieval: lowest cost for long-live data retrive in milisecond
 
-After 30 days, transition -> statnard After 90 days, transition -> Glacier After 1000 days, Delete
+* flexible retrive : lowest cost for long-live data - access one/two time per years
 
-Encrypt inflight SSL api extend data at rest : server side encryption (AWS kms) AES256 Client side encryption
+* Deep archive : 7-10 years or longer to meet regulatory, ca be restored with 12 hours
+* object Life cycle policy
 
-Versioning protect dat accidental deletion
+* After 30 days, transition -> statnard After 90 days, transition -> Glacier After 1000 days, Delete
 
-Suspend
+* Encrypt inflight SSL api extend data at rest : server side encryption (AWS kms) AES256 Client side encryption
 
-MFA delete : multi factor authentication
+* Versioning protect dat accidental deletion
 
-Pre-sign URL : limited access time
+* Suspend
 
-Coress-regoin Replication rule: Async new object source bucket to target bucket
-EC2
+* MFA delete : multi factor authentication
 
-C4 : Compute optimal R3 : Memeory i2 : storage g2 : GPU based
+* Pre-sign URL : limited access time
 
-AMI: Amazon Machine Image Public by AWS AWS market place Generating from existing instance uploaded virtual server
-pricing
+* Coress-regoin Replication rule: Async new object source bucket to target bucket
+* EC2
 
-on-demand
-reserve instance
-	all upfront (63% saving per years)
-	partial upfront
-	no upfront
-spot instance (not critical server)
+* C4 : Compute optimal R3 : Memeory i2 : storage g2 : GPU based
 
-Elastic Block store
+* AMI: Amazon Machine Image Public by AWS AWS market place Generating from existing instance uploaded virtual server
+* pricing
 
-EBS volume automaticaly replicate
+* on-demand
+* reserve instance
+	* all upfront (63% saving per years)
+	* partial upfront
+	* no upfront
+* spot instance (not critical server)
 
-Magnetc volume :
-	clold data work load
-	lowest performance
-	1gb - 1tb
-	100 iops
-	data is accessed infrequently
+* Elastic Block store
+
+* EBS volume automaticaly replicate
+
+* Magnetc volume :
+	* clold data work load
+	* lowest performance
+	* 1gb - 1tb
+	* 100 iops
+	* data is accessed infrequently
 	sequential read
 	low-cost storage space
 				 
